@@ -6,6 +6,7 @@ let  nunjucks = require('nunjucks')
 
 let  indexRouter = require('./routes/index')
 let  usersRouter = require('./routes/users')
+let  mailerRouter = require('./routes/mailer')
 
 let  app = express()
 
@@ -23,5 +24,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
+app.use('/mailer', mailerRouter)
 
 module.exports = app

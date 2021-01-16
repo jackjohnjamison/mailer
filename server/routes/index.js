@@ -11,6 +11,4 @@ router.get('/', async  function(req, res, next) {
   res.render('index.njk', data)
 })
 
-console.log('I ran')
-
 module.exports = router
