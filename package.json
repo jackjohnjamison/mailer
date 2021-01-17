@@ -8,14 +8,15 @@
       "views/",
       "bin"
     ],
-    "ext": "js, njk",
+    "ext": "js, njk, css",
     "events": {
       "restart": "browser-sync reload"
     }
   },
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "concurrently \"nodemon ./bin/www\" \"browser-sync start --proxy=\"http://localhost:3030/\" "
+    "gulp": "gulp",
+    "dev": "concurrently \"npm run gulp\" \"nodemon server.js\" \"browser-sync start --proxy=\"http://localhost:3030/\" --files=\"assets/dist/**/*\" --no-inject-changes\" "
   },
   "dependencies": {
     "@sendgrid/mail": "^7.4.2",
@@ -25,6 +26,11 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "^4.16.4",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel-minify": "^0.5.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^4.1.0",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.7",
     "nunjucks": "^3.2.2"

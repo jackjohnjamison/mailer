@@ -25,3 +25,13 @@ function sendMail() {
     const emailDataJSON = JSON.stringify(collectEmailData())
     postRequest(emailDataJSON)
 }
+
+function initEmailPreview() {
+    const emailPreview = document.getElementById('emailPreview')
+    const emailHTML = document.getElementById('html')
+    emailHTML.addEventListener("change", () => {
+        emailPreview.srcdoc = emailHTML.value
+    })
+}
+
+initEmailPreview()

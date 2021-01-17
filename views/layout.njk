@@ -6,10 +6,23 @@
         <title>{{ title }}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/styles.css">
     </head>
 
     <body>
-        {% if h1 %}<h1>{{h1}}</h1>{% endif %}
-        {% block  content %}{% endblock %}
+        <div class="content">
+            <header>
+                <nav></nav>
+            </header>
+            
+            <main>
+                {% if h1 %}<h1>{{h1}}</h1>{% endif %}
+
+                {% block  content %}{% endblock %}
+            </main>
+
+            <footer></footer>
+        </div>
     </body>
 </html>
