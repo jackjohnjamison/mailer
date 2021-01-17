@@ -11,7 +11,9 @@ const  mailerRouter = require('./routes/mailer')
 
 const  app = express()
 
-var bodyParser = require('body-parser') // For parsing the body of API requests
+app.use(express.static('assets/dist')) // Sets root for static files
+
+const bodyParser = require('body-parser') // For parsing the body of API requests
 app.use(bodyParser.json()) // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 
