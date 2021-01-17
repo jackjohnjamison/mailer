@@ -1,7 +1,9 @@
 const  express = require('express')
 const  path = require('path')
-const  cookieParser = require('cookie-parser')
-const  logger = require('morgan')
+
+const  cookieParser = require('cookie-parser') // Unused???
+const  logger = require('morgan') // Unused???
+
 const  nunjucks = require('nunjucks')
 
 const  indexRouter = require('./routes/index')
