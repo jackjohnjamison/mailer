@@ -3,5 +3,67 @@
 {% block  content %}
     <p>TODO sender instructions</p>
 
+    <form id="emailForm" action="javascript:;" onsubmit="sendMail()">
+        <ul>
+            {# <li>
+                <label for="API_KEY">API key:</label>
+                <input id="API_KEY" type="password" required>
+            </li> #}
+            <li>
+                <label for="toAddress">To address:</label>
+                <input id="toAddress" type="email" required>
+            </li>
+            <li>
+                <label for="fromAddress">From address:</label>
+                <input id="fromAddress" type="email" required>
+            </li>
+            <li>
+                <label for="subject">Subject:</label>
+                <input id="subject" type="text" required>
+            </li>
+            <li>
+                <label for="html">HTML:</label>
+                <textarea id="html" rows="6" required></textarea>
+            </li>
+            <li>
+                <label for="text">Text alternative:</label>
+                <textarea id="text" rows="6"></textarea>
+            </li>
+            <li>
+                <input type="submit">
+            </li>
+        </ul>
+    </form>
 
+    <script>
+
+        function postRequest(emailDataJSON) {
+            const request = new XMLHttpRequest()
+            const API_URL = 'http://localhost:3000/mailer' // TODO enviroment variable
+
+            request.open("POST", API_URL, true)
+            request.setRequestHeader("Content-type", "application/json")
+            request.send(emailDataJSON)
+
+            request.onreadystatechange = () => {
+                console.log(request.readyState, request.status, request.response)
+            }
+        }
+
+        function collectEmailData() {
+            return {
+                toAddress: document.getElementById('toAddress').value,
+                fromAddress: document.getElementById('fromAddress').value,
+                subject: document.getElementById('subject').value,
+                text: document.getElementById('html').value,
+                html: document.getElementById('text').value
+            }
+        }
+
+        function sendMail() {
+            const emailDataJSON = JSON.stringify(collectEmailData())
+            postRequest(emailDataJSON)
+        }
+
+    </script>
 {% endblock %}
