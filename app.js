@@ -10,7 +10,7 @@ const  mailerRouter = require('./routes/mailer')
 const  app = express()
 
 var bodyParser = require('body-parser')
-app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.json()) // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 
 // configute Nunjucks with 'views' as templates directory
