@@ -48,7 +48,8 @@ body {
 
 .mailer__form {
     flex-grow: 1;
-    min-width: 240px;
+    width: 240px;
+    max-width: 100%;
 }
 
 .mailer__preview {
