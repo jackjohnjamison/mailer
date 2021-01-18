@@ -3,9 +3,9 @@ let  router = express.Router()
 
 router.get('/', async  function(req, res, next) {
   let  data = {
-    h1: 'HTML email sending tool',
+    h1: 'Homepage',
     layout:  'layout.njk',
-    title: 'HTML email sending tool'
+    title: 'Webpage title'
   }
 
   res.render('index.njk', data)

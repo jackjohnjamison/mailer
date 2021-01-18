@@ -8,6 +8,7 @@ const  nunjucks = require('nunjucks')
 
 const  indexRouter = require('./routes/index')
 const  mailerRouter = require('./routes/mailer')
+const  mailerAPIRouter = require('./routes/mailer-api')
 
 const  app = express()
 
@@ -31,5 +32,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
 app.use('/mailer', mailerRouter)
+app.use('/mailer/api', mailerAPIRouter)
 
 module.exports = app

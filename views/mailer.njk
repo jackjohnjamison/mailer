@@ -1,0 +1,47 @@
+{% extends  layout %}
+
+{% block  content %}
+    <p>TODO sender instructions</p>
+
+    <div class="mailer">
+        <div class="mailer__form">
+            <form class="email-form" id="emailForm" action="javascript:;">
+                <ul>
+                    {# <li>
+                        <label for="API_KEY">API key:</label>
+                        <input id="API_KEY" type="password" required>
+                    </li> #}
+                    <li>
+                        <label for="toAddress">To address:</label>
+                        <input id="toAddress" type="email" required>
+                    </li>
+                    <li>
+                        <label for="fromAddress">From address:</label>
+                        <input id="fromAddress" type="email" required>
+                    </li>
+                    <li>
+                        <label for="subject">Subject:</label>
+                        <input id="subject" type="text" required>
+                    </li>
+                    <li>
+                        <label for="html">HTML:</label>
+                        <textarea id="html" rows="6" required></textarea>
+                    </li>
+                    <li>
+                        <label for="text">Text alternative:</label>
+                        <textarea id="text" rows="6"></textarea>
+                    </li>
+                    <li>
+                        <input type="submit">
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+        <div class="mailer__preview">
+            <iframe id="emailPreview" class="mailer__preview-frame" src="javascript:void(0);"></iframe>
+        </div>
+    </div>
+
+    <script src="js/send-mail.js"></script>
+{% endblock %}
