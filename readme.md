@@ -1,3 +1,10 @@
+Install dependencies:
+    npm i
+
+Install Browser Sync and Nodemon:
+    npm i browser-sync -g
+    npm install nodemon -g
+
 Localhost address: http://localhost:3000/
 
 Serivces
