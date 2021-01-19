@@ -1,7 +1,7 @@
 FROM node:latest
 
 ENV PORT=3000
-ENV FROM_EMAIL_ADDRESS=jackofthejamison@hotmailcom
+ENV FROM_EMAIL_ADDRESS=""
 ENV SG_API_KEY=""
 
 WORKDIR /app

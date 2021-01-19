@@ -12,23 +12,21 @@ const  mailerAPIRouter = require('./routes/mailer-api')
 
 const  app = express()
 
-app.use(express.static('assets/dist')) // Sets root for static files
-
 const bodyParser = require('body-parser') // For parsing the body of API requests
 app.use(bodyParser.json()) // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 
 // configute Nunjucks with 'views' as templates directory
-nunjucks.configure('views', {
-  autoescape:  true,
-  express:  app
+nunjucks.configure(path.join(__dirname, 'views'), {
+  autoescape: true,
+  express: app
 })
 
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended:  false }))
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'assets'))) // Sets root for static files
 
 app.use('/', indexRouter)
 app.use('/mailer', mailerRouter)

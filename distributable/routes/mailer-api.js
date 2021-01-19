@@ -4,17 +4,17 @@ const sgMail = require('@sendgrid/mail')
 
 // Set API key and From email enviromental variables
 try {
-    sgMail.setApiKey(require('../LOCAL_VARIABLES').API_KEY || process.env.SG_API_KEY) 
-} catch {
-    console.error('No API key environment variable')
+    sgMail.setApiKey( process.env.SG_API_KEY || require('../../LOCAL_VARIABLES').API_KEY ) 
+} catch(err) {
+    console.error('No API key environment variable', err)
 }
 
 let fromAddress
 
 try {
-    fromAddress = require('../LOCAL_VARIABLES').FROM_EMAIL || process.env.FROM_EMAIL_ADDRESS
-} catch {
-    console.error('No from email address environment variable')
+    fromAddress = process.env.FROM_EMAIL_ADDRESS || require('../../LOCAL_VARIABLES').FROM_EMAIL
+} catch(err) {
+    console.error('No from email address environment variable', err)
 }
 
 // Set message defaults

@@ -12,23 +12,21 @@ const rollup = require('gulp-rollup')
 
 //*// Set paths
 var paths = {
-	assets: {
-		css: {
-			src: './assets/src/css/**/*.scss',
-			dist: './assets/dist/css',
-		},
-		js: {
-			src: './assets/src/js/**/*.js',
-			dist: './assets/dist/js'
-		}
-	},
+    css: {
+        src: './asset-src/css/**/*.scss',
+        dist: './distributable/assets/css',
+    },
+    js: {
+        src: './asset-src/js/**/*.js',
+        dist: './distributable/assets/js'
+    }
 }
 
 //*// Run Babel & minify
 const processJS = () => {
-	return gulp.src(paths.assets.js.src)
+	return gulp.src(paths.js.src)
 	.pipe(rollup({
-		input: 'assets/src/js/send-mail.js',
+		input: 'asset-src/js/send-mail.js',
 		output: {format: 'esm'}
 	}))
 	.pipe(babel({
@@ -39,29 +37,29 @@ const processJS = () => {
 			keepClassName: true
 		}
     }))
-    .pipe(gulp.dest(paths.assets.js.dist));
+    .pipe(gulp.dest(paths.js.dist));
 }
 
 //*// Run SASS & minify
 const brandingStyles = async() => {
     console.log('running')
-    return gulp.src(paths.assets.css.src)
+    return gulp.src(paths.css.src)
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             cascade: false,
             grid: 'autoplace'
         }))
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest(paths.assets.css.dist))
+        .pipe(gulp.dest(paths.css.dist))
 }
 
 const watchTemplates = () => {
-    gulp.watch(paths.assets.css.src, brandingStyles),
-    gulp.watch([paths.assets.js.src], processJS)
+    gulp.watch(paths.css.src, brandingStyles),
+    gulp.watch([paths.js.src], processJS)
 }
 
 const watch = gulp.parallel(watchTemplates)
-watch.description = 'Watching for SASS changes'
+watch.description = 'Watching for changes'
 
 const dev = gulp.series(brandingStyles, processJS, watch)
 const build = gulp.series(brandingStyles, processJS)

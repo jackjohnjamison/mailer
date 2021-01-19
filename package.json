@@ -1,12 +1,13 @@
 {
-  "name": "mailer",
+  "name": "mailtest",
   "version": "1.0.0",
   "nodemonConfig": {
     "watch": [
-      "app.js",
-      "routes/",
-      "views/",
-      "bin"
+      "distributable/app.js",
+      "distributable/bin/www",
+      "distributable/routes/",
+      "distributable/views/",
+      "distributable/bin"
     ],
     "ext": "js, njk, css",
     "events": {
@@ -14,18 +15,13 @@
     }
   },
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node ./distributable/bin/www",
     "gulp": "gulp",
-    "dev": "concurrently \"npm run gulp\" \"nodemon server.js\" \"browser-sync start --proxy=\"http://localhost:3060/\" --files=\"assets/dist/**/*\" --no-inject-changes\" "
+    "dev": "concurrently \"npm run gulp\" \"nodemon server.js\" \"browser-sync start --proxy=\"http://localhost:3060/\" --files=\"distributable/assets/**/*\" --no-inject-changes\" "
   },
   "dependencies": {
     "@babel/preset-env": "^7.12.11",
-    "@sendgrid/mail": "^7.4.2",
-    "body-parser": "^1.19.0",
     "concurrently": "^5.3.0",
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "^4.16.4",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
@@ -33,8 +29,6 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-rollup": "^2.17.0",
     "gulp-sass": "^4.1.0",
-    "morgan": "~1.9.1",
-    "nunjucks": "^3.2.2",
-    "rollup": "^2.36.2"
+    "rollup": "^2.37.0"
   }
 }
