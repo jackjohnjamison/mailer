@@ -3,18 +3,10 @@ const router = express.Router()
 const sgMail = require('@sendgrid/mail')
 
 // Set API key if file is avalible
-let API_KEY
-
 try {
-    API_KEY = require('../API_KEY')
-    sgMail.setApiKey(API_KEY) 
+    sgMail.setApiKey(process.env.SG_API_KEY) 
 } catch {
-    console.error(`
-        No API key file present
-        Crate and account and gain an API key at sendgrid.com
-        Add a file in the root directory called 'API_KEY.js' using the following format:
-        module.exports = 'SG._XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-    `)
+    console.error('No API key environment variable')
 }
 
 // Set message defaults

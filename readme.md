@@ -7,16 +7,21 @@ Install Browser Sync and Nodemon:
 
 Localhost address: http://localhost:3000/
 
-Build Docker image:
-    docker build -t johnjamison/mailer .
+Local Docker commands:
+    Build Docker image:
+        docker build -t johnjamison/mailer .
 
-Run Docker container (on port 3030):
-    docker run -p 3030:3030 johnjamison/mailer
+    Run Docker container (on port 3030):
+        docker run -p 3030:3030 johnjamison/mailer
 
-Push to Docker Hub:
-    docker push johnjamison/mailer
+    Push to Docker Hub:
+        docker push johnjamison/mailer
 
 Docker server side commands:
+    Set environment variables: ????
+        PORT=80
+        SG_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
     Pull the latest image:
         docker pull johnjamison/mailer
 
@@ -26,6 +31,7 @@ Docker server side commands:
 Serivces
 https://sendgrid.com/
 
-Used tutorials 
+Tutorials and guides:
 https://www.smashingmagazine.com/2020/04/express-api-backend-project-postgresql/
 https://www.digitalocean.com/community/tutorials/use-expressjs-to-get-url-and-post-parameters
+https://vsupalov.com/docker-arg-env-variable-guide/

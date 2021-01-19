@@ -23,8 +23,6 @@
     }
     
     function sendMail() {
-        let counter = 1
-        console.log('RUN', counter++)
         const emailDataJSON = JSON.stringify(collectEmailData())
         postRequest(emailDataJSON)
     }

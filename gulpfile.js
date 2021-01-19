@@ -44,6 +44,7 @@ const processJS = () => {
 
 //*// Run SASS & minify
 const brandingStyles = async() => {
+    console.log('running')
     return gulp.src(paths.assets.css.src)
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
