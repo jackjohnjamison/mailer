@@ -4,7 +4,7 @@ const sgMail = require('@sendgrid/mail')
 
 // Set API key and From email enviromental variables
 try {
-    sgMail.setApiKey(require('API_KEY') || process.env.SG_API_KEY) 
+    sgMail.setApiKey(require('../API_KEY') || process.env.SG_API_KEY) 
 } catch {
     console.error('No API key environment variable')
 }
