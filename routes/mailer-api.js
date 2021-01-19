@@ -2,16 +2,24 @@ const express = require('express')
 const router = express.Router()
 const sgMail = require('@sendgrid/mail')
 
-// Set API key if file is avalible
+// Set API key and From email enviromental variables
 try {
-    sgMail.setApiKey(process.env.SG_API_KEY) 
+    sgMail.setApiKey(require('API_KEY') || process.env.SG_API_KEY) 
 } catch {
     console.error('No API key environment variable')
 }
 
+let fromAddress
+
+try {
+    fromAddress = process.env.FROM_EMAIL_ADDRESS
+} catch {
+    console.error('No from email address environment variable')
+}
+
 // Set message defaults
 const defaults = {
-    fromAddress: 'jackofthejamison@hotmail.com', // this has to be set to your validated email sending address.
+    fromAddress: fromAddress, // this has to be set to your validated email sending address.
     subject: 'No subject', // The SendGrid mailer API requires a subject
     text: 'No text content',
     html: 'No html content'
