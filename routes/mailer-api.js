@@ -12,7 +12,7 @@ try {
 let fromAddress
 
 try {
-    fromAddress = process.env.FROM_EMAIL_ADDRESS
+    fromAddress = require('../FROM_EMAIL') || process.env.FROM_EMAIL_ADDRESS
 } catch {
     console.error('No from email address environment variable')
 }

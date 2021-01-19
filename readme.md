@@ -8,7 +8,7 @@ Install Browser Sync and Nodemon:
 NPM Scritps:
     run npm dev
 
-Localhost address: http://localhost:3000/
+Nodemon localhost address: http://localhost:3000/
 
 Local Docker commands:
     Build Docker image:
@@ -21,6 +21,9 @@ Local Docker commands:
         docker push johnjamison/mailer
 
 Docker server side commands:
+
+    Destroy everything:
+        docker container rm -f $(docker ps -aq)
 
     Pull the latest image:
         docker pull johnjamison/mailer
