@@ -12,7 +12,7 @@ Nodemon localhost address: http://localhost:3000/
 
 Local Docker commands:
 
-    cd distributable
+    cd dist
 
     Build Docker image:
         docker build -t johnjamison/mailer .

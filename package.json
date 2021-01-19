@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "nodemonConfig": {
     "watch": [
-      "distributable/app.js",
-      "distributable/bin/www",
-      "distributable/routes/",
-      "distributable/views/",
-      "distributable/bin"
+      "dist/app.js",
+      "dist/bin/www",
+      "dist/routes/",
+      "dist/views/",
+      "dist/bin"
     ],
     "ext": "js, njk, css",
     "events": {
@@ -15,9 +15,9 @@
     }
   },
   "scripts": {
-    "start": "node ./distributable/bin/www",
+    "start": "node ./dist/bin/www",
     "gulp": "gulp",
-    "dev": "concurrently \"npm run gulp\" \"nodemon server.js\" \"browser-sync start --proxy=\"http://localhost:3060/\" --files=\"distributable/assets/**/*\" --no-inject-changes\" "
+    "dev": "concurrently \"npm run gulp\" \"nodemon server.js\" \"browser-sync start --proxy=\"http://localhost:3060/\" --files=\"dist/assets/**/*\" --no-inject-changes\" "
   },
   "dependencies": {
     "@babel/preset-env": "^7.12.11",

@@ -2,6 +2,14 @@ const express = require('express')
 const router = express.Router()
 const sgMail = require('@sendgrid/mail')
 
+// Set message defaults
+const defaults = {
+    fromAddress: "", // this has to be set to your validated email sending address.
+    subject: 'No subject', // The SendGrid mailer API requires a subject
+    text: 'No text content',
+    html: 'No html content'
+}
+
 // Set API key and From email enviromental variables
 try {
     sgMail.setApiKey( process.env.SG_API_KEY || require('../../LOCAL_VARIABLES').API_KEY ) 
@@ -9,20 +17,10 @@ try {
     console.error('No API key environment variable', err)
 }
 
-let fromAddress
-
 try {
-    fromAddress = process.env.FROM_EMAIL_ADDRESS || require('../../LOCAL_VARIABLES').FROM_EMAIL
+    defaults.fromAddress = process.env.FROM_EMAIL_ADDRESS || require('../../LOCAL_VARIABLES').FROM_EMAIL
 } catch(err) {
     console.error('No from email address environment variable', err)
-}
-
-// Set message defaults
-const defaults = {
-    fromAddress: fromAddress, // this has to be set to your validated email sending address.
-    subject: 'No subject', // The SendGrid mailer API requires a subject
-    text: 'No text content',
-    html: 'No html content'
 }
 
 router.post('/', (req, res) => {
@@ -32,7 +30,7 @@ router.post('/', (req, res) => {
     if (req.body.toAddress) {
         const msg = {
             to: req.body.toAddress,
-            from: req.body.fromAddress || defaults.fromAddress,
+            from: defaults.fromAddress,
             subject: req.body.subject || defaults.subject,
             text: req.body.text || defaults.text,
             html: req.body.html || defaults.html

@@ -14,11 +14,11 @@ const rollup = require('gulp-rollup')
 var paths = {
     css: {
         src: './asset-src/css/**/*.scss',
-        dist: './distributable/assets/css',
+        dist: './dist/assets/css',
     },
     js: {
         src: './asset-src/js/**/*.js',
-        dist: './distributable/assets/js'
+        dist: './dist/assets/js'
     }
 }
 
