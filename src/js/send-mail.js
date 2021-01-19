@@ -15,7 +15,6 @@
     function collectEmailData() {
         return {
             toAddress: document.getElementById('toAddress').value,
-            fromAddress: document.getElementById('fromAddress').value,
             subject: document.getElementById('subject').value,
             html: document.getElementById('html').value,
             text: document.getElementById('text').value

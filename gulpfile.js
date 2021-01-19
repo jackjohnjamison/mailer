@@ -13,11 +13,11 @@ const rollup = require('gulp-rollup')
 //*// Set paths
 var paths = {
     css: {
-        src: './asset-src/css/**/*.scss',
+        src: './src/css/**/*.scss',
         dist: './dist/assets/css',
     },
     js: {
-        src: './asset-src/js/**/*.js',
+        src: './src/js/**/*.js',
         dist: './dist/assets/js'
     }
 }
@@ -26,7 +26,7 @@ var paths = {
 const processJS = () => {
 	return gulp.src(paths.js.src)
 	.pipe(rollup({
-		input: 'asset-src/js/send-mail.js',
+		input: 'src/js/send-mail.js',
 		output: {format: 'esm'}
 	}))
 	.pipe(babel({
