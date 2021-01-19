@@ -5,6 +5,9 @@ Install Browser Sync and Nodemon:
     npm i browser-sync -g
     npm install nodemon -g
 
+NPM Scritps:
+    run npm dev
+
 Localhost address: http://localhost:3000/
 
 Local Docker commands:
@@ -12,23 +15,20 @@ Local Docker commands:
         docker build -t johnjamison/mailer .
 
     Run Docker container (on port 3030):
-        docker run -p 3030:3030 johnjamison/mailer
+        docker run -p 3030:3030 -e "PORT=3030" -e "SG_API_KEY=SG._XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" johnjamison/mailer
 
     Push to Docker Hub:
         docker push johnjamison/mailer
 
 Docker server side commands:
-    Set environment variables: ????
-        PORT=80
-        SG_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
     Pull the latest image:
         docker pull johnjamison/mailer
 
-    Run the image:
-        docker run -p 80:80 johnjamison/mailer
+    Run the image (on port 80):
+        docker run -p 80:80 -e "PORT=80" -e "SG_API_KEY=SG._XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" johnjamison/mailer
 
-Serivces
+Serivces:
 https://sendgrid.com/
 
 Tutorials and guides:
