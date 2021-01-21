@@ -1,18 +1,19 @@
-const  express = require('express')
-const  path = require('path')
+const express = require('express')
+const path = require('path')
 
-const  cookieParser = require('cookie-parser')
-const  logger = require('morgan')
-
-const  nunjucks = require('nunjucks')
-
-const  indexRouter = require('./routes/index')
-const  mailerRouter = require('./routes/mailer')
-const  mailerAPIRouter = require('./routes/mailer-api')
-
-const  app = express()
-
+const cookieParser = require('cookie-parser')
+const logger = require('morgan')
 const bodyParser = require('body-parser') // For parsing the body of API requests
+
+const nunjucks = require('nunjucks')
+
+const indexRouter = require('./routes/index')
+const mailerRouter = require('./routes/mailer')
+const mailerAPIRouter = require('./routes/mailer-api')
+
+const app = express()
+
+
 app.use(bodyParser.json()) // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 

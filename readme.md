@@ -43,3 +43,6 @@ https://www.smashingmagazine.com/2020/04/express-api-backend-project-postgresql/
 https://www.digitalocean.com/community/tutorials/use-expressjs-to-get-url-and-post-parameters
 https://vsupalov.com/docker-arg-env-variable-guide/
 https://compiledsuccessfully.dev/git-skip-worktree/
+
+https://timonweb.com/javascript/running-expressjs-server-over-https/
+https://linuxize.com/post/creating-a-self-signed-ssl-certificate/

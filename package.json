@@ -17,7 +17,7 @@
   "scripts": {
     "start": "node ./dist/bin/www",
     "gulp": "gulp",
-    "dev": "concurrently \"npm run gulp\" \"nodemon server.js\" \"browser-sync start --proxy=\"http://localhost:3060/\" --files=\"dist/assets/**/*\" --no-inject-changes\" "
+    "dev": "concurrently \"npm run gulp\" \"nodemon server.js\" \"browser-sync start --proxy=\"https://localhost:3060/\" --https --files=\"dist/**/*\" \" "
   },
   "dependencies": {
     "@babel/preset-env": "^7.12.11",
