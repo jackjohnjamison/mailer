@@ -34,8 +34,10 @@ Docker server side commands:
     Run the image (on port 80):
         docker run -p 80:80 -e "PORT=80" -e "SG_API_KEY=SG._XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" johnjamison/mailer
 
-Serivces:
+Serivces used:
 https://sendgrid.com/
+https://www.ssls.com/
+https://www.digitalocean.com/
 
 Tutorials and guides:
 https://regbrain.com/article/nunjucks-express-app

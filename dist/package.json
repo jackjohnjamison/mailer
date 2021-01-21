@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "HTML email sending utility",
   "main": "server.js",
-  "scripts": {},
+  "scripts": {
+    "build-image": "docker build -t johnjamison/mailer .",
+    "push-image": "docker push johnjamison/mailer",
+    "launch": "npm run build-image && npm run push-image"
+  },
   "author": "John (The Jack) Jamison",
   "license": "MIT",
   "dependencies": {
