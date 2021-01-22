@@ -1,8 +1,10 @@
 FROM node:latest
 
-ENV PORT=3000
-ENV FROM_EMAIL_ADDRESS=""
-ENV SG_API_KEY=""
+ENV PORT=""
+ENV FROM_EMAIL=""
+ENV API_KEY=""
+ENV SSL_KEY=""
+ENV SSL_CRT=""
 
 WORKDIR /app
 COPY package.json /app
