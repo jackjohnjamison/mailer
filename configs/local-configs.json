@@ -1,1 +1,10 @@
+/*
+    It has been hidden from Git localy by commiting an empty file and then using the skip work tree Git command.
+    
+    Hide:
+        'git update-index --skip-worktree configs/local-configs.json'
 
+    Unhide:
+        'git update-index --no-skip-worktree configs/local-configs.json'
+
+*/
