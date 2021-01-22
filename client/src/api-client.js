@@ -1,9 +1,10 @@
 // const iframe = document.getElementById('dialog-iframe').contentWindow.document.querySelector('html')
 // const content = iframe.contentWindow.document.querySelector('html')
+document.querySelector('.email-preview')
 
 function postRequest(emailDataJSON) {
     const request = new XMLHttpRequest()
-    const API_URL = 'http://jjamison.co.uk/mailer/api'
+    const API_URL = 'https://jjamison.co.uk/mailer/api'
 
     request.open("POST", API_URL, true)
     request.setRequestHeader("Content-type", "application/json")
@@ -18,13 +19,13 @@ function collectEmailData() {
     return {
         toAddress: 'jjamison@wiley.com',
         subject: 'Test email',
-        html: document.getElementById('dialog-iframe').contentWindow.document.querySelector('body'),
+        html: document.querySelector('#dialog-iframe').contentWindow.document.querySelector('#MainFrame').contentWindow.document.querySelector('body').innerHTML
     }
 }
 
-function sendMail() {
+(function sendMail() {
     const emailDataJSON = JSON.stringify(collectEmailData())
     postRequest(emailDataJSON)
-}
+})();
 
 
