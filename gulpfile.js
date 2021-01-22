@@ -23,10 +23,10 @@ var paths = {
 }
 
 //*// Run Babel & minify
-const processJS = () => {
+const processJS = (script) => {
 	return gulp.src(paths.js.src)
 	.pipe(rollup({
-		input: 'src/js/send-mail.js',
+		input: `src/js/${script}.js`,
 		output: {format: 'esm'}
 	}))
 	.pipe(babel({
@@ -38,6 +38,15 @@ const processJS = () => {
 		}
     }))
     .pipe(gulp.dest(paths.js.dist));
+}
+
+const scripts = [
+    'constructor-form',
+    'send-mail'
+]
+
+const processAllJS = () => {
+    scripts.forEach(script => processJS(script))
 }
 
 //*// Run SASS & minify
@@ -53,16 +62,17 @@ const brandingStyles = async() => {
         .pipe(gulp.dest(paths.css.dist))
 }
 
+//*// Watch & exports
 const watchTemplates = () => {
     gulp.watch(paths.css.src, brandingStyles),
-    gulp.watch([paths.js.src], processJS)
+    gulp.watch([paths.js.src], processAllJS)
 }
 
 const watch = gulp.parallel(watchTemplates)
 watch.description = 'Watching for changes'
 
-const dev = gulp.series(brandingStyles, processJS, watch)
-const build = gulp.series(brandingStyles, processJS)
+const dev = gulp.series(brandingStyles, processAllJS, watch)
+const build = gulp.series(brandingStyles, processAllJS)
 
 exports.build = build
 exports.dev = dev

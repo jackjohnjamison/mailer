@@ -3,7 +3,7 @@
 {% block  content %}
     <p>TODO sender instructions</p>
 
-    <div class="mailer">
+    <div class="mailer flex-grid">
         <div class="mailer__form">
             <form class="email-form" id="emailForm" action="javascript:;">
                 <ul>
@@ -35,5 +35,8 @@
         </div>
     </div>
 
-    <script src="js/send-mail.js"></script>
 {% endblock %}
+
+{% block scripts %}
+    <script src="js/send-mail.js"></script>
+{% endblock %}}

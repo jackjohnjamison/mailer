@@ -7,12 +7,7 @@ const bodyParser = require('body-parser') // For parsing the body of API request
 
 const nunjucks = require('nunjucks')
 
-const indexRouter = require('./routes/index')
-const mailerRouter = require('./routes/mailer')
-const mailerAPIRouter = require('./routes/mailer-api')
-
 const app = express()
-
 
 app.use(bodyParser.json()) // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
@@ -29,8 +24,14 @@ app.use(express.urlencoded({ extended:  false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'assets'))) // Sets root for static files
 
+// Adding routes
+const indexRouter = require('./routes/index')
+const mailerRouter = require('./routes/mailer')
+const mailerAPIRouter = require('./routes/mailer-api')
+const constructor = require('./routes/constructor')
 app.use('/', indexRouter)
 app.use('/mailer', mailerRouter)
 app.use('/mailer/api', mailerAPIRouter)
+app.use('/constructor', constructor)
 
 module.exports = app

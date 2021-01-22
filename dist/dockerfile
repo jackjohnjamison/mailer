@@ -1,10 +1,6 @@
 FROM node:latest
 
-ENV PORT=""
-ENV FROM_EMAIL=""
-ENV API_KEY=""
-ENV SSL_KEY=""
-ENV SSL_CRT=""
+ENV IN_IMAGE="true"
 
 WORKDIR /app
 COPY package.json /app

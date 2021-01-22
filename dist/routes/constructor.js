@@ -3,13 +3,13 @@ let  router = express.Router()
 
 router.get('/', async  function(req, res, next) {
   let  data = {
-    h1: 'HTML email sending tool',
+    h1: 'Run Command Constructor',
     layout:  'layout.njk',
-    title: 'HTML email sending tool',
-    bodyClass: "full-width"
+    title: 'Run Command Constructor',
+    noIndex: true
   }
 
-  res.render('mailer.njk', data)
+  res.render('constructor.njk', data)
 })
 
 module.exports = router

@@ -7,22 +7,26 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        {% if noIndex %}<meta name="robots" content="noindex">{% endif %}
+
         <link rel="stylesheet" href="css/styles.css">
     </head>
 
-    <body>
+    <body class="{{bodyClass}}">
         <div class="content">
             <header>
                 <nav></nav>
             </header>
             
-            <main>
+            <main class="main">
                 {% if h1 %}<h1>{{h1}}</h1>{% endif %}
 
-                {% block  content %}{% endblock %}
+                {% block content %}{% endblock %}
             </main>
 
             <footer></footer>
         </div>
+
+        {% block scripts %}{% endblock %}
     </body>
 </html>
