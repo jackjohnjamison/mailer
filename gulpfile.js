@@ -42,7 +42,8 @@ const processJS = (script) => {
 
 const scripts = [
     'constructor-form',
-    'send-mail'
+    'send-mail',
+    'api-client'
 ]
 
 const processAllJS = () => {

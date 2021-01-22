@@ -4,7 +4,7 @@
   "nodemonConfig": {
     "watch": [
       "dist/app.js",
-      "dist/bin/www",
+      "dist/bin/www.js",
       "dist/routes/",
       "dist/views/",
       "dist/bin"
@@ -15,7 +15,7 @@
     }
   },
   "scripts": {
-    "start": "node ./dist/bin/www",
+    "start": "node ./dist/bin/www.js",
     "gulp": "gulp",
     "dev": "concurrently \"npm run gulp\" \"nodemon server.js\" \"browser-sync start --proxy=\"https://localhost:3060/\" --https --files=\"dist/**/*\" \" "
   },

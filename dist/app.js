@@ -1,5 +1,8 @@
 const express = require('express')
+const basicAuth = require('express-basic-auth')
 const path = require('path')
+const auth = require('./lib/auth')
+
 
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
@@ -29,9 +32,10 @@ const indexRouter = require('./routes/index')
 const mailerRouter = require('./routes/mailer')
 const mailerAPIRouter = require('./routes/mailer-api')
 const constructor = require('./routes/constructor')
+
 app.use('/', indexRouter)
-app.use('/mailer', mailerRouter)
-app.use('/mailer/api', mailerAPIRouter)
-app.use('/constructor', constructor)
+app.use('/mailer', basicAuth(auth.page), mailerRouter)
+app.use('/mailer/api', basicAuth(auth.api), mailerAPIRouter)
+app.use('/constructor', basicAuth(auth.page), constructor)
 
 module.exports = app
