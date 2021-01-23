@@ -6,7 +6,7 @@ router.get('/', async  function(req, res, next) {
     h1: 'HTML email sending tool',
     layout:  'layout.njk',
     title: 'HTML email sending tool',
-    bodyClass: "full-width"
+    bodyClass: "full-width body--mailer"
   }
 
   res.render('mailer.njk', data)

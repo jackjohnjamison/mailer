@@ -6,7 +6,8 @@ router.get('/', async  function(req, res, next) {
     h1: 'Run Command Constructor',
     layout:  'layout.njk',
     title: 'Run Command Constructor',
-    noIndex: true
+    noIndex: true,
+    bodyClass: "body--constructor"
   }
 
   res.render('constructor.njk', data)

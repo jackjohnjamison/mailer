@@ -2,8 +2,8 @@
 
 {% block  content %}
 
-    <div class="flex-grid">
-        <div class="pannel">
+    <div class="flex-grid form">
+        <div class="grid-item">
             <form action="javascript:;">
                 <label for="PORT">Port</label>
                 <input type="number" id="PORT" value="443" required></label>
@@ -20,12 +20,12 @@
                 <label for="SSL_CRT">SSL Certificate</label>
                 <textarea id="SSL_CRT"></textarea required>
 
-                <button type="submit" id="convert">Update</button>
-                <button id="copy">Copy</button>
+                <button class="button" type="submit" id="convert">Update</button>
+                <button class="button" id="copy">Copy</button>
             </form>
         </div>
 
-        <div class="pannel">
+        <div class="grid-item">
             <label for="config">Config</label>
             <textarea id="config"></textarea>
         </div>

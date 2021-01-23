@@ -1,0 +1,30 @@
+.form {
+    
+    textarea {
+        resize: vertical;
+        width: calc(100% - 30px);
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        margin: 0 auto 5px;
+        box-sizing: border-box;
+    }
+
+    input {
+        width: calc(100% - #{$PadLarge});
+        padding: 5px;
+        margin: 5px 2px;
+    }
+
+    li,
+    label,
+    input:not([type=submit]) {
+        display: block;
+        resize: vertical;
+    }
+}

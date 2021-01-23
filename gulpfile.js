@@ -46,7 +46,7 @@ const scripts = [
     'api-client'
 ]
 
-const processAllJS = () => {
+const processAllJS = async () => {
     scripts.forEach(script => processJS(script))
 }
 

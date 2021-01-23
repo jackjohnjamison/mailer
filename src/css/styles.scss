@@ -1,5 +1,11 @@
+@import "__variables";
+
+// Includes
 @import "includes/_containers";
 @import "includes/_grid";
-@import "includes/_mail-form";
-@import "includes/_constructor";
-@import "includes/_mail-form";
+@import "includes/_buttons";
+@import "includes/_forms";
+
+// Pages
+@import "pages/_constructor";
+@import "pages/_mail-form";

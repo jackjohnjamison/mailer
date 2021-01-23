@@ -35,7 +35,7 @@ const constructor = require('./routes/constructor')
 
 app.use('/', indexRouter)
 app.use('/mailer', basicAuth(auth.page), mailerRouter)
-app.use('/mailer/api', basicAuth(auth.api), mailerAPIRouter)
+app.use('/mailer/api', /*basicAuth(auth.api),*/ mailerAPIRouter) // TODO basic auth for the API
 app.use('/constructor', basicAuth(auth.page), constructor)
 
 module.exports = app
