@@ -1,3 +1,5 @@
+// General form styling
+
 .form {
     textarea {
         resize: vertical;
@@ -20,6 +22,15 @@
         margin: 5px 2px;
     }
 
+    input::-webkit-outer-spin-button, // Removes spinner button from number inputs
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
     label {
         margin-bottom: 3px;
     }
@@ -36,13 +47,36 @@
 .dark {
     input,
     textarea {
-        background: $d-color2;
-        color: $d-foreground;
+        background: $d-color--background;
+        color: $d-color--font;
         border-color: #44475a;
         border-radius: 5px;
-        // border-bottom-color: lighten($d-color1, 10%);
-        // border-left-color:  lighten($d-color1, 10%);
-        // border-right-color: darken($d-color1, 10%);
-        // border-top-color: darken($d-color1, 10%);
+        border-bottom-color: lighten($d-color--forground, 10%);
+        border-left-color:  lighten($d-color--forground, 10%);
+        border-right-color: darken($d-color--forground, 10%);
+        border-top-color: darken($d-color--forground, 10%);
+        caret-color: $d-color--focus;
+    }
+
+    input:-webkit-autofill, // Removes a bunch of weirdness caused by browser autofill 
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+        -webkit-text-fill-color: $d-color--font;
+        -webkit-box-shadow: 0 0 0px 1000px $d-color--background inset;
+        box-shadow: 0 0 0px 1000px $d-color--background inset;
+        transition: background-color 5000s ease-in-out 0s;
+        border: $d-color--forground 2px inset!important;
+        border-radius: 3px;
+
+        &::first-line {
+            font-size: $body-font--size;
+            outline: none;
+        }
     }
 }

@@ -1,0 +1,14 @@
+@import "__fonts";
+@import "__colors";
+
+@import "__theme--dracula";
+
+$gauge--medium: 20px;
+$gauge--large: 40px;
+
+$site-width: 1200px;
+$border-radius: 20px;
+
+$transition-time: .5s;
+$theme-transition: background-color $transition-time ease-in-out, $transition-time 0.5s ease-in-out, border-color $transition-time ease-in-out;
+

@@ -7,64 +7,49 @@ body {
     padding: 0;
     margin: 0;
     height: 100%;
-    font-size: &BodyFontSize;
 
-    // &:before { // For simulationg a scoll bar on the left side
-    //     content: "";
-    //     width: 17px;
-    //     background-color: $ScrollColor;
-    //     height: 100%;
-    //     float: left;
-    // }
+    @include body-font;
 }
 
 .content {
-    /* System Fonts as used by GitHub */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     position: relative;
-    background-color: $Color1;
-    color: $TextColor;
-    padding: $Pad;
+    background-color: $l-color--background;
+    padding: $gauge--medium;
     box-sizing: border-box;
     height: 100%;
     min-height: 100vh;
-    // transition: filter 0.25s ease-out;
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    transition: $theme-transition;
     overflow-y: scroll; /* Show vertical scrollbar */
     overflow-x: hidden; /* Hide horizontal scrollbar */
 
     &.dark {
-        // filter: invert(1); // Inverts colors
-        color: $d-foreground;
-        background-color: $d-color2;
-        text-shadow: 0 0 4px rgba(0, 0, 0, .5); // Adds subtle text shadow
-        box-shadow: inset -3px 3px 8px 3px rgba(0,0,0,0.2);
+
+        @include d-background--deep;
 
         .main {
-            background-color: $d-color1;
-            box-shadow: -3px 3px 8px 3px rgba(0,0,0,0.1), inset -4px 4px 6px rgba(255, 255, 255, .03);
+           @include d-foreground;
         }
 
         a {
-            color: #ffb86c;
+            color: $d-color--link;
         }
 
         iframe {
-            background-color: $d-foreground;
+            background-color: $d-color--font;
         }
     }
 }
 
 
 .main {
-    border-radius: $BorderRadius;
-    max-width: $SiteWidth;
+    border-radius: $border-radius;
+    max-width: $site-width;
     margin: 0 auto;
-    padding: $Pad;
+    padding: $gauge--medium;
     background-color: #fff;
 }
 
 body.full-width .main {
     max-width: 100%;
-    margin: $Pad;
+    margin: $gauge--medium;
 }

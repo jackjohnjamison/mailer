@@ -1,5 +1,6 @@
-@import "__variables";
-@import "__colors--dracula";
+// variables
+@import "variables/__variables";
+// @import "variables/__colors--dracula";
 
 
 // Includes
@@ -12,7 +13,3 @@
 // Pages
 @import "pages/_constructor";
 @import "pages/_mail-form";
-
-.dark {
-    // dark styles
-}

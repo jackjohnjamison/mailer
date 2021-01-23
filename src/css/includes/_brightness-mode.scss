@@ -1,6 +1,8 @@
+// Styles for brightness mode button
+
 #brightness-mode {
-    width: 40px;
-    height: 40px;
+    width: $gauge--large;
+    height: $gauge--large;
     background-color: #ccc;
     border: solid 2px #000;
     border-radius: 10px;
@@ -9,6 +11,7 @@
     right: 5px;
     cursor: pointer;
     overflow: hidden;
+    transition: transform .5s ease-in-out; // Gives it spin with the transform property
     
     &:after {
         content: "\263D";
@@ -16,14 +19,25 @@
         line-height: 35px;
         margin-left: 3px;
     }
+
+    &:focus {
+        outline: none;
+        border-color: $l-color--forground;
+    }
 }
 
 .dark #brightness-mode {
+
+    transform: rotate(360deg);
     
     &:after {
         content: "\263C";
         font-size: 36px;
         line-height: 32px;
         margin-left: -4px;
+    }
+
+    &:focus {
+        border-color: $d-color--focus;
     }
 }
