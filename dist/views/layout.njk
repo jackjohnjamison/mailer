@@ -8,12 +8,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         {% if noIndex %}<meta name="robots" content="noindex">{% endif %}
+        
+        {# Adds the js class to the html root before the style sheet is loaded #}
+        <script>document.documentElement.classList='js'</script>
 
         <link rel="stylesheet" href="css/styles.css">
     </head>
 
     <body class="{{bodyClass}}">
-        <div class="content">
+        <div class="content" id="content">
             <header>
                 <nav></nav>
             </header>
@@ -27,6 +30,13 @@
             <footer></footer>
         </div>
 
-        {% block scripts %}{% endblock %}
+        {% block scripts %}{# For site level scripts #}
+
+            <script src="js/brightness-mode.js"></script>
+
+            {% block extraScripts %}{% endblock %}{# For page level scripts #}
+
+        {% endblock %}
+
     </body>
 </html>

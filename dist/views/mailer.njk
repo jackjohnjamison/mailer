@@ -31,12 +31,13 @@
         </div>
 
         <div class="mailer__preview">
+            <label for="emailPreview">Preview Window</label>
             <iframe id="emailPreview" class="mailer__preview-frame" src="javascript:void(0);"></iframe>
         </div>
     </div>
 
 {% endblock %}
 
-{% block scripts %}
+{% block extraScripts %}
     <script src="js/send-mail.js"></script>
 {% endblock %}}

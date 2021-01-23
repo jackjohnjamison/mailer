@@ -5,7 +5,8 @@ router.get('/', async  function(req, res, next) {
   let  data = {
     h1: 'Homepage',
     layout:  'layout.njk',
-    title: 'Webpage title'
+    title: 'Webpage title',
+    bodyClass: 'home-page'
   }
 
   res.render('index.njk', data)

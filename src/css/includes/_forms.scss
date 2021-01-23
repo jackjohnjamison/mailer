@@ -1,5 +1,4 @@
-.form {
-    
+.form {    
     textarea {
         resize: vertical;
         width: calc(100% - 30px);
@@ -16,9 +15,13 @@
     }
 
     input {
-        width: calc(100% - #{$PadLarge});
-        padding: 5px;
+        width: calc(100% - 50px);
+        padding: 10px;
         margin: 5px 2px;
+    }
+
+    label {
+        margin-bottom: 3px;
     }
 
     li,

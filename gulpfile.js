@@ -43,7 +43,8 @@ const processJS = (script) => {
 const scripts = [
     'constructor-form',
     'send-mail',
-    'api-client'
+    'api-client',
+    'brightness-mode'
 ]
 
 const processAllJS = async () => {
