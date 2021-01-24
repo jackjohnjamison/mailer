@@ -1,13 +1,13 @@
+const https = require('https')
 const app = require('../app')
 const debug = require('debug')('server:server')
-const http = require('http')
-const https = require('https')
+const utl = require('../lib/utilites')
 const enviroment = require('./enviroment')
 
 /**
  * Get port from environment and store in Express.
  */
-const port = normalizePort( enviroment.PORT )
+const port = utl.normalizePort( enviroment.PORT )
 app.set('port', port)
 
 /**
@@ -15,8 +15,8 @@ app.set('port', port)
  */
 function setServer() {
     return https.createServer({
-        key: Buffer.from(enviroment.SSL_KEY, 'base64').toString('ascii'),
-        cert: Buffer.from(enviroment.SSL_CRT, 'base64').toString('ascii')
+        key: utl.decodeBase64(enviroment.SSL_KEY),
+        cert: utl.decodeBase64(enviroment.SSL_CRT)
     }, app)
 }
 const server = setServer()
@@ -29,25 +29,6 @@ server.listen(port, function () {
 })
 server.on('error', onError)
 server.on('listening', onListening)
-
-/**
- * Normalize a port into a number, string, or false.
- */
-function normalizePort(val) {
-  var port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
 
 /**
  * Event listener for HTTP server "error" event.

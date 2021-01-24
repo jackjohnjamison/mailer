@@ -5,7 +5,7 @@ const auth = {
         realm: 'Cybertron'
     },
 
-    api: {
+    api: {  // Not currently used
         users: { 'send' : 'mail' },
         challenge: true,
         realm: 'Unicron'
