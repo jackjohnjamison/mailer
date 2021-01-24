@@ -7,10 +7,10 @@
     background-color: #ccc; // TODO light theme colours
     border: solid 2px #000;
 
-    border-radius: $guage--small;
-    position: fixed;
-    top: 5px;
-    right: 5px;
+    border-radius: $gauge--small;
+    position: absolute;
+    top: $gauge--tiny;
+    right: $gauge--tiny;
     cursor: pointer;
     overflow: hidden;
     transition: transform $transition-time ease-in-out, // Gives it spin with the transform property

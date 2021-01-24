@@ -1,0 +1,13 @@
+.message {
+    padding: $gauge--small;
+    margin-bottom: $gauge--medium;
+    border-radius: $gauge--tiny;
+    background-color: $l-color--highlight;
+}
+
+.dark .message {
+    background-color: $d-color--accent;
+    color: $d-color--text-dark;
+    text-shadow: 0 0 4px rgba(255, 255, 255, .5);
+    font-weight: bold;
+}

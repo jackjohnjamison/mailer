@@ -23,6 +23,8 @@ $d-color--button-hover: darken($d-color--accent, 10%);
 @mixin d-foreground {
     background-color: $d-color--forground;
     box-shadow: 3px 3px 8px 3px rgba(0,0,0,0.1), inset 4px 4px 6px rgba(255, 255, 255, .03);
+
+    @include d-border--embossed
 }
 
 @mixin d-background--deep {
@@ -54,14 +56,14 @@ $d-color--button-hover: darken($d-color--accent, 10%);
 
 @mixin d-border--debossed {
     border-bottom-color: lighten($d-color--forground, 10%);
-    border-left-color:  lighten($d-color--forground, 10%);
-    border-right-color: $d-color--forground;
-    border-top-color: $d-color--forground;
+    border-right-color: lighten($d-color--forground, 10%);
+    border-left-color: darken($d-color--forground, 5%);
+    border-top-color: darken($d-color--forground, 5%);
 }
 
 @mixin d-border--embossed {
-    border-bottom-color: $d-color--forground;
-    border-left-color:  $d-color--forground;
-    border-right-color: lighten($d-color--forground, 10%);
+    border-bottom-color: darken($d-color--forground, 5%);
+    border-right-color:  darken($d-color--forground, 5%);
+    border-left-color: lighten($d-color--forground, 10%);
     border-top-color: lighten($d-color--forground, 10%);
 }

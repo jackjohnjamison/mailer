@@ -3,7 +3,8 @@
 
 @import "__theme--dracula";
 
-$guage--small: 10px;    
+$gauge--tiny: 5px;
+$gauge--small: 10px;    
 $gauge--medium: 20px;
 $gauge--large: 40px;
 
@@ -11,6 +12,7 @@ $site-width: 1200px;
 $border-radius: 20px;
 
 $break--mobile: 600px;
+$break--lap: 1120px;
 
 $transition-time: .5s;
 $theme-transition: background-color $transition-time ease-in-out, $transition-time 0.5s ease-in-out, border-color $transition-time ease-in-out;

@@ -3,8 +3,8 @@
 .form {
     textarea {
         resize: vertical;
-        width: calc(100% - 30px);
-        padding: $guage--small;
+        width: calc(100% - 30px); // TODO improve this
+        padding: $gauge--small;
         box-sizing: border-box;
     }
 
@@ -14,13 +14,13 @@
     }
 
     li {
-        margin: 0 auto 5px;    
+        margin: 0 auto $gauge--tiny;    
     }
 
     input {
-        width: calc(100% - 34px);
-        padding: 10px;
-        margin: 5px 2px;
+        width: calc(100% - 34px); // TODO improve this
+        padding: $gauge--small;
+        margin: $gauge--tiny 2px;
         box-sizing: border-box;
     }
 
@@ -52,12 +52,10 @@
         background: $d-color--background;
         color: $d-color--font;
         border-color: #44475a;
-        border-radius: 5px;
-        border-bottom-color: lighten($d-color--forground, 10%);
-        border-left-color:  lighten($d-color--forground, 10%);
-        border-right-color: darken($d-color--forground, 10%);
-        border-top-color: darken($d-color--forground, 10%);
+        border-radius: $gauge--tiny;
         caret-color: $d-color--highlight;
+
+        @include d-border--debossed;
     }
 
     input:-webkit-autofill, // Removes a bunch of weirdness caused by browser autofill 

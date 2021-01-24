@@ -1,10 +1,10 @@
 {% extends  layout %}
 
 {% block  content %}
-    <p>TODO sender instructions</p>
+    {{ messages.message("Make yourself a Docker run command for the best image there ever was ;)")}}
 
-    <div class="flex-grid form">
-        <div class="form__inputs">
+    <div class="flex form">
+        <div class="mailer__inputs">
             <form class="email-form" id="emailForm" action="javascript:;">
                 <ul>
                     <li>
@@ -25,6 +25,7 @@
                     </li>
                     <li>
                         <button class="button" type="submit">Submit</button>
+                        <button class="button" type="button" id="update">Update</button>
                     </li>
                 </ul>
             </form>

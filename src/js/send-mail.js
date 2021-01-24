@@ -35,8 +35,19 @@
     (function initEmailPreview() {
         const emailPreview = document.getElementById('emailPreview')
         const emailHTML = document.getElementById('html')
-        emailHTML.addEventListener("change", () => {
+        const update = document.getElementById('update')
+
+        function updatePreview() {
             emailPreview.srcdoc = emailHTML.value
+        }
+
+        update.addEventListener("change", () => {
+            updatePreview()
+        })
+
+        update.addEventListener("click", (e) => {
+            e.preventDefault()
+            updatePreview()
         })
     })();
 })();

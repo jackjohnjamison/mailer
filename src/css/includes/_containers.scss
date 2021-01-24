@@ -37,10 +37,6 @@ body {
 
         @include d-background--deep;
 
-        .main {
-           @include d-foreground;
-        }
-
         a {
             color: $d-color--link;
         }
@@ -57,6 +53,11 @@ body {
     margin: 0 auto;
     padding: $gauge--medium;
     background-color: #fff;
+    border: solid 1px black;
+}
+
+.dark .main {
+    @include d-foreground;
 }
 
 body.full-width .main {
