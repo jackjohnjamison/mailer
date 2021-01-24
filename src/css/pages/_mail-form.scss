@@ -16,5 +16,26 @@
         height: 600px;
         max-width: calc(100% - 30px);
         resize: vertical;
+        border-radius: 5px;
+    }
+
+    @media (max-width: $break--mobile) {
+        input,
+        textarea,
+        .mailer__preview-frame {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .dark {
+        .mailer__preview-frame {
+            @include d-border--debossed;
+        }
+
+        textarea {
+            @include d-border--debossed;
+            border-width: 2px;
+        }
     }
 }

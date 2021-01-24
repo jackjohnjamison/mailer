@@ -3,15 +3,18 @@
 #brightness-mode {
     width: $gauge--large;
     height: $gauge--large;
-    background-color: #ccc;
+
+    background-color: #ccc; // TODO light theme colours
     border: solid 2px #000;
-    border-radius: 10px;
-    position: absolute;
+
+    border-radius: $guage--small;
+    position: fixed;
     top: 5px;
     right: 5px;
     cursor: pointer;
     overflow: hidden;
-    transition: transform .5s ease-in-out; // Gives it spin with the transform property
+    transition: transform $transition-time ease-in-out, // Gives it spin with the transform property
+    background-color $transition-time ease-in-out;
     
     &:after {
         content: "\263D";
@@ -27,17 +30,13 @@
 }
 
 .dark #brightness-mode {
-
     transform: rotate(360deg);
+    @include button--dark;
     
     &:after {
         content: "\263C";
         font-size: 36px;
         line-height: 32px;
         margin-left: -4px;
-    }
-
-    &:focus {
-        border-color: $d-color--focus;
     }
 }

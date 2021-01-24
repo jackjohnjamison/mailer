@@ -4,14 +4,22 @@ $d-color--background: #282a36;
 $d-color--forground: #44475a;
 $d-color--font: #f8f8f2;
 
-$d-color--focus: #ff79c6;
+$d-color--highlight: #ff79c6;
+$d-color--accent: #bd93f9;
 
 $d-color--warn: #ffb86c;
 $d-color--alert: #ff5555;
 $d-color--success: #50fa7b;
 
-$d-color--link: #bd93f9;
 
+//*// Derived colours
+$d-color--text-dark: darken($d-color--background, 10%);
+$d-color--focus: $d-color--warn;
+$d-color--link: $d-color--accent;
+$d-color--button: $d-color--accent;
+$d-color--button-hover: darken($d-color--accent, 10%);
+
+//*// Mixins
 @mixin d-foreground {
     background-color: $d-color--forground;
     box-shadow: 3px 3px 8px 3px rgba(0,0,0,0.1), inset 4px 4px 6px rgba(255, 255, 255, .03);
@@ -42,4 +50,18 @@ $d-color--link: #bd93f9;
     ), snow;
     background-size: 7px 7px;
     background-position: 0 0, 2px 2px, -2px -2px;
+}
+
+@mixin d-border--debossed {
+    border-bottom-color: lighten($d-color--forground, 10%);
+    border-left-color:  lighten($d-color--forground, 10%);
+    border-right-color: $d-color--forground;
+    border-top-color: $d-color--forground;
+}
+
+@mixin d-border--embossed {
+    border-bottom-color: $d-color--forground;
+    border-left-color:  $d-color--forground;
+    border-right-color: lighten($d-color--forground, 10%);
+    border-top-color: lighten($d-color--forground, 10%);
 }

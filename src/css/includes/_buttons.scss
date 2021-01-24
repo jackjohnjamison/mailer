@@ -2,4 +2,31 @@
     margin: 5px 2px;
     padding: 6px 20px;
     cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color $transition-time ease-in-out;
+    @include body-font;
+    font-size: 18px;
+}
+
+//*// Dark mode styles
+
+@mixin button--dark {
+    color: $d-color--text-dark;
+    background-color: $d-color--button;
+    @include d-border--embossed;
+
+    &:hover,
+    &:active {
+        background-color: $d-color--button-hover;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $d-color--focus;
+    }
+}
+
+.dark .button {
+    @include button--dark;
 }

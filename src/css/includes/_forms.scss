@@ -4,6 +4,8 @@
     textarea {
         resize: vertical;
         width: calc(100% - 30px);
+        padding: $guage--small;
+        box-sizing: border-box;
     }
 
     ul {
@@ -12,14 +14,14 @@
     }
 
     li {
-        margin: 0 auto 5px;
-        box-sizing: border-box;
+        margin: 0 auto 5px;    
     }
 
     input {
-        width: calc(100% - 50px);
+        width: calc(100% - 34px);
         padding: 10px;
         margin: 5px 2px;
+        box-sizing: border-box;
     }
 
     input::-webkit-outer-spin-button, // Removes spinner button from number inputs
@@ -55,7 +57,7 @@
         border-left-color:  lighten($d-color--forground, 10%);
         border-right-color: darken($d-color--forground, 10%);
         border-top-color: darken($d-color--forground, 10%);
-        caret-color: $d-color--focus;
+        caret-color: $d-color--highlight;
     }
 
     input:-webkit-autofill, // Removes a bunch of weirdness caused by browser autofill 
