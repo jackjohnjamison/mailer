@@ -1,33 +1,27 @@
-{% extends  layout %}
+{% extends layout %}
 
-{% block  content %}
-    {{ messages.message("Make yourself a Docker run command for the best image there ever was ;)")}}
+{% block content %}
+    {{ messages.message("Send yourself some emails buddy!")}}
 
-    <div class="flex form">
+    <div class="flex form-wrapper">
         <div class="mailer__inputs">
             <form class="email-form" id="emailForm" action="javascript:;">
-                <ul>
-                    <li>
-                        <label for="toAddress">To address</label>
-                        <input id="toAddress" type="email" required>
-                    </li>
-                    <li>
-                        <label for="subject">Subject</label>
-                        <input id="subject" type="text" required>
-                    </li>
-                    <li>
-                        <label for="html">HTML</label>
-                        <textarea id="html" rows="6" required></textarea>
-                    </li>
-                    <li>
-                        <label for="text">Text alternative</label>
-                        <textarea id="text" rows="6"></textarea>
-                    </li>
-                    <li>
-                        <button class="button" type="submit">Submit</button>
-                        <button class="button" type="button" id="update">Update</button>
-                    </li>
-                </ul>
+                <label for="toAddress">To address</label>
+                <input id="toAddress" type="email" required>
+
+                <label for="subject">Subject</label>
+                <input id="subject" type="text" required>
+
+                <label for="html">HTML</label>
+                <textarea id="html" rows="6" required></textarea>
+
+                <label for="text">Text alternative</label>
+                <textarea id="text" rows="6"></textarea>
+
+                <div class="flex flex--small margin-top--medium">
+                    <button class="button" type="submit">Submit</button>
+                    <button class="button" type="button" id="update">Update</button>
+                </div>
             </form>
         </div>
 

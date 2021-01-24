@@ -1,36 +1,28 @@
 // General form styling
 
-.form {
+.form-wrapper {
     textarea {
         resize: vertical;
-        width: calc(100% - 30px); // TODO improve this
+        width: 100%;
         padding: $gauge--small;
         box-sizing: border-box;
-    }
-
-    ul {
-        padding: 0;
-        margin: 0;
-    }
-
-    li {
-        margin: 0 auto $gauge--tiny;    
     }
 
     input {
-        width: calc(100% - 34px); // TODO improve this
         padding: $gauge--small;
         margin: $gauge--tiny 2px;
         box-sizing: border-box;
-    }
+        font-size: $body-font--size;
 
-    input::-webkit-outer-spin-button, // Removes spinner button from number inputs
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-    input[type=number] {
-        -moz-appearance: textfield;
+        &::-webkit-outer-spin-button, // Removes spinner button from number inputs
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &[type=number] {
+            -moz-appearance: textfield;
+        }
     }
 
     label {
@@ -39,10 +31,19 @@
 
     li,
     label,
-    input:not([type=submit]) {
+    input {
+        width: 100%;
         display: block;
-        resize: vertical;
-        font-size: 16px;
+    }
+
+    @media (max-width: $break--mobile) {
+        .button {
+            width: 100%;
+
+            &:not(:first-child) {
+                margin-top: $gauge--small;
+            }
+        }
     }
 }
 
@@ -56,6 +57,10 @@
         caret-color: $d-color--highlight;
 
         @include d-border--debossed;
+    }
+
+    textarea {
+        border-bottom-right-radius: 0;
     }
 
     input:-webkit-autofill, // Removes a bunch of weirdness caused by browser autofill 

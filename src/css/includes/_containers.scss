@@ -33,6 +33,10 @@ body {
     overflow-y: scroll; /* Show vertical scrollbar */
     overflow-x: hidden; /* Hide horizontal scrollbar */
 
+    @media (max-width: $break--mobile) {
+        padding: $gauge--tiny;
+    }
+
     &.dark {
 
         @include d-background--deep;
@@ -47,20 +51,24 @@ body {
     }
 }
 
-.main {
-    border-radius: $border-radius;
+.brick {
+    border-radius: $gauge--medium;
     max-width: $site-width;
     margin: 0 auto;
-    padding: $gauge--medium;
+    padding: $gauge--large;
     background-color: #fff;
     border: solid 1px black;
+
+    @media (max-width: $break--mobile) {
+        padding: $gauge--medium;
+    }
 }
 
-.dark .main {
+.dark .brick {
     @include d-foreground;
 }
 
-body.full-width .main {
+body.full-width .brick {
     max-width: 100%;
     margin: $gauge--medium;
 

@@ -1,0 +1,20 @@
+.flex {
+    flex-wrap: wrap;
+    display: flex;
+
+    margin: $gauge--medium ( -$gauge--medium ); // The second term is in brackets to stop it subtacting from the first
+
+    & > * {
+        flex-grow: 1;
+        margin: 0 $gauge--medium;
+    }
+}
+
+.flex.flex--small {
+    margin: $gauge--small ( -$gauge--small ); // The second term is in brackets to stop it subtacting from the first
+
+    & > * {
+        flex-grow: 1;
+        margin: 0 $gauge--small;
+    }
+}

@@ -1,31 +1,10 @@
 .body--constructor {
-    .pannel {
-        max-width: 600px;
-        width: 50%;
-        margin-bottom: $gauge--small;
-
-        &:last-child textarea {
-            width: 100%;
-        }
-    }
-
-    label {
+    label { // Stops long text wrapping
         margin-right: $gauge--large;
-    }
-    
-    @media (max-width: $break--mobile) {
-        .pannel {
-            width: 100%;
-        }
-
-        textarea,
-        form > * {
-            width: 100%;
-        }
     }
 
     .config {
-        min-height: 200px;
+        min-height: 416px;
         height: 90%;
     }
 }

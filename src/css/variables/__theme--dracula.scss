@@ -54,16 +54,13 @@ $d-color--button-hover: darken($d-color--accent, 10%);
     background-position: 0 0, 2px 2px, -2px -2px;
 }
 
+$darken-by: 10%;
+$lighten-by: 10%;
+
 @mixin d-border--debossed {
-    border-bottom-color: lighten($d-color--forground, 10%);
-    border-right-color: lighten($d-color--forground, 10%);
-    border-left-color: darken($d-color--forground, 5%);
-    border-top-color: darken($d-color--forground, 5%);
+    @include border--debossed($color: $d-color--forground, $darken: $darken-by, $lighten: $lighten-by);
 }
 
 @mixin d-border--embossed {
-    border-bottom-color: darken($d-color--forground, 5%);
-    border-right-color:  darken($d-color--forground, 5%);
-    border-left-color: lighten($d-color--forground, 10%);
-    border-top-color: lighten($d-color--forground, 10%);
+    @include border--embossed($color: $d-color--forground, $darken: $darken-by, $lighten: $lighten-by);
 }

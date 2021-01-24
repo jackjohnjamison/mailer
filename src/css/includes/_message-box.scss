@@ -6,7 +6,7 @@
 }
 
 .dark .message {
-    background-color: $d-color--accent;
+    background-color: lighten($d-color--accent, 6%);
     color: $d-color--text-dark;
     text-shadow: 0 0 4px rgba(255, 255, 255, .5);
     font-weight: bold;

@@ -1,10 +1,12 @@
 .button {
     margin: $gauge--tiny 2px;
-    padding: 6px 20px;
+    padding: $gauge--small $gauge--medium;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: $gauge--small;
     font-weight: 600;
-    transition: background-color $transition-time ease-in-out;
+    transition: background-color $transition-time ease-in-out, border-color .1s ease-out;
+    border-width: 3px;
+
     @include body-font;
     font-size: 18px;
 }
@@ -14,16 +16,22 @@
 @mixin button--dark {
     color: $d-color--text-dark;
     background-color: $d-color--button;
-    @include d-border--embossed;
+    text-shadow: 0 0 4px rgba(255, 255, 255, .5);
+    @include border--embossed($color: $d-color--accent, $darken: 10%, $lighten: 10%);
 
     &:hover,
     &:active {
         background-color: $d-color--button-hover;
+        @include border--embossed($color: $d-color--button-hover, $darken: 10%, $lighten: 10%);
     }
 
     &:focus {
         outline: none;
-        border-color: $d-color--focus;
+        @include border--embossed($color: $d-color--focus, $darken: 10%, $lighten: 10%);
+    }
+
+    &:focus:active {
+        @include border--debossed($color: $d-color--button-hover, $darken: 10%, $lighten: 10%);
     }
 }
 

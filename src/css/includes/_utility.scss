@@ -1,0 +1,15 @@
+// TODO
+
+@mixin border--embossed($color, $darken: 10%, $lighten: 10%) {
+    border-bottom-color: darken($color, $darken);
+    border-right-color: darken($color, $darken);
+    border-left-color: lighten($color, $lighten);
+    border-top-color: lighten($color, $lighten);
+}
+
+@mixin border--debossed($color, $darken: 10%, $lighten: 10%) {
+    border-bottom-color: lighten($color, $lighten);
+    border-right-color: lighten($color, $lighten);
+    border-left-color: darken($color, $darken);
+    border-top-color: darken($color, $darken);
+}

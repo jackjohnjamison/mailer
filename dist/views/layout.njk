@@ -24,9 +24,10 @@
             </header>
             
             <main class="main">
-                {% if h1 %}<h1>{{h1}}</h1>{% endif %}
-
-                {% block content %}{% endblock %}
+                <div class="brick">
+                    <h1>{{h1}}</h1>
+                    {% block content %}{% endblock %}
+                </div>
             </main>
 
             <footer></footer>
