@@ -38,8 +38,11 @@ body {
     }
 
     &.dark {
+        color: $d-color--font;
+        text-shadow: 0 0 4px rgba(0, 0, 0, .5);
+        box-shadow: inset 3px 3px 8px 3px rgba(0,0,0,0.2);
 
-        @include d-background--deep;
+        @include d-background--corrugated;
 
         a {
             color: $d-color--link;

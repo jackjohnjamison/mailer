@@ -5,7 +5,7 @@ Install Browser Sync and Nodemon:
     npm i browser-sync -g
     npm install nodemon -g
 
-NPM Scritps:
+NPM scripts:
     run npm dev
 
 Nodemon localhost address: http://localhost:3000/
@@ -23,7 +23,7 @@ Local Docker commands:
     Push to Docker Hub:
         docker push johnjamison/mailer
 
-Docker server side commands:
+Docker server-side commands:
 
     Destroy everything:
         docker container rm -f $(docker ps -aq)
@@ -31,10 +31,10 @@ Docker server side commands:
     Pull the latest image:
         docker pull johnjamison/mailer
 
-    Run the image (on port 80):
-        docker run -p 80:80 -e "PORT=80" -e "SG_API_KEY=SG._XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" johnjamison/mailer
+    Run the image on port 443 for HTPPS. Evirmental varriables will have to be filled. Try using the constructor on /constructor to make the run command:
+        docker run -p 443:443 -e "PORT=443" -e "FROM_EMAIL=" -e "API_KEY=" -e "SSL_CRT=" -e "SSL_KEY=" johnjamison/mailer
 
-Serivces used:
+Services used:
 https://sendgrid.com/
 https://www.ssls.com/
 https://www.digitalocean.com/
@@ -51,5 +51,6 @@ https://linuxize.com/post/creating-a-self-signed-ssl-certificate/
 
 https://www.digitalocean.com/community/tutorials/how-to-secure-a-containerized-node-js-application-with-nginx-let-s-encrypt-and-docker-compose
 
-Asthetic:
+Aesthetic:
 https://draculatheme.com/contribute
+https://www.gradientmagic.com/

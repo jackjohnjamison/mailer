@@ -27,31 +27,11 @@ $d-color--button-hover: darken($d-color--accent, 10%);
     @include d-border--embossed
 }
 
-@mixin d-background--deep {
-    color: $d-color--font;
-        
-    text-shadow: 0 0 4px rgba(0, 0, 0, .5); // Adds subtle text shadow. TODO find a better place for this as it affects the whole page?
-    box-shadow: inset 3px 3px 8px 3px rgba(0,0,0,0.2);
-
-    background-color: $d-color--background;
-    background:
-    radial-gradient(
-        lighten($d-color--background, .6%) 3px,
-        transparent 0,
-        transparent 100%
-    ),
-    radial-gradient(
-        darken($d-color--background, .6%), 3px,
-        transparent 0,
-        transparent 100%
-    ),
-    radial-gradient(
-        $d-color--background 3px,
-        transparent 0,
-        transparent 100%
-    ), snow;
-    background-size: 7px 7px;
-    background-position: 0 0, 2px 2px, -2px -2px;
+@mixin d-background--corrugated {
+    background-image: radial-gradient(circle at center center, transparent,#12141a),
+    repeating-linear-gradient(135deg, rgb(33,33,33) 0px,rgb(33,33,33) 2px,transparent 2px, transparent 10px,rgb(33,33,33) 10px,rgb(33,33,33) 11px,transparent 11px, transparent 21px),
+    repeating-linear-gradient(45deg, #282a36 0px, #282a36 4px,transparent 4px, transparent 8px),
+    linear-gradient(90deg, #12141a,rgb(33,33,33));
 }
 
 $darken-by: 10%;
