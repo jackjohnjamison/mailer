@@ -1,9 +1,0 @@
-{
-    "PORT": "443",
-
-    "API_KEY": "",
-    "FROM_EMAIL": "",
-
-    "SSL_KEY": "",
-    "SSL_CRT": ""
-}

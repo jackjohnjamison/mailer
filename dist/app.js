@@ -3,7 +3,6 @@ const basicAuth = require('express-basic-auth')
 const path = require('path')
 const auth = require('./lib/auth')
 
-
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const bodyParser = require('body-parser') // For parsing the body of API requests

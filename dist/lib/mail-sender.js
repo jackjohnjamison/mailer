@@ -1,5 +1,4 @@
 const sgMail = require('@sendgrid/mail')
-const enviroment = require('../bin/enviroment')
 
 // Set message defaults
 const defaults = {
@@ -11,13 +10,13 @@ const defaults = {
 
 // Set API key and From email enviromental variables
 try {
-    sgMail.setApiKey( enviroment.API_KEY ) 
+    sgMail.setApiKey( process.env.API_KEY ) 
 } catch(err) {
     console.error('No API key environment variable', err)
 }
 
 try {
-    defaults.fromAddress = enviroment.FROM_EMAIL
+    defaults.fromAddress = process.env.FROM_EMAIL
 } catch(err) {
     console.error('No from email address environment variable', err)
 }

@@ -1,13 +1,15 @@
 const https = require('https')
+
+const utl = require('../lib/server-utilites')
+utl.setDevEnviroment()
+
 const app = require('../app')
 const debug = require('debug')('server:server')
-const utl = require('../lib/utilites')
-const enviroment = require('./enviroment')
 
 /**
  * Get port from environment and store in Express.
  */
-const port = utl.normalizePort( enviroment.PORT )
+const port = utl.normalizePort( process.env.PORT )
 app.set('port', port)
 
 /**
@@ -15,8 +17,8 @@ app.set('port', port)
  */
 function setServer() {
     return https.createServer({
-        key: utl.decodeBase64(enviroment.SSL_KEY),
-        cert: utl.decodeBase64(enviroment.SSL_CRT)
+        key: utl.getSSLEnv('SSL_KEY'),
+        cert: utl.getSSLEnv('SSL_CRT')
     }, app)
 }
 const server = setServer()
@@ -58,7 +60,7 @@ function onError(error) {
 }
 
 /**
- * Event listener for HTTP server "listening" event.
+ * Event listener for HTTPS server "listening" event.
  */
 function onListening() {
   var addr = server.address();
