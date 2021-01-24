@@ -9,22 +9,22 @@ const bodyParser = require('body-parser') // For parsing the body of API request
 
 const nunjucks = require('nunjucks')
 
-const app = express()
+const main = express()
 
-app.use(bodyParser.json()) // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
+main.use(bodyParser.json()) // support json encoded bodies
+main.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 
 // configute Nunjucks with 'views' as templates directory
 nunjucks.configure(path.join(__dirname, 'views'), {
   autoescape: true,
-  express: app
+  express: main
 })
 
-app.use(logger('dev'))
-app.use(express.json())
-app.use(express.urlencoded({ extended:  false }))
-app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'assets'))) // Sets root for static files
+main.use(logger('dev'))
+main.use(express.json())
+main.use(express.urlencoded({ extended:  false }))
+main.use(cookieParser())
+main.use(express.static(path.join(__dirname, 'assets'))) // Sets root for static files
 
 // Adding routes
 const indexRouter = require('./routes/index')
@@ -32,9 +32,9 @@ const mailerRouter = require('./routes/mailer')
 const mailerAPIRouter = require('./routes/mailer-api')
 const constructor = require('./routes/constructor')
 
-app.use('/', indexRouter)
-app.use('/mailer', basicAuth(auth.page), mailerRouter)
-app.use('/mailer/api', /*basicAuth(auth.api),*/ mailerAPIRouter) // TODO basic auth for the API
-app.use('/constructor', basicAuth(auth.page), constructor)
+main.use('/', indexRouter)
+main.use('/mailer', basicAuth(auth.page), mailerRouter)
+main.use('/mailer/api', /*basicAuth(auth.api),*/ mailerAPIRouter) // TODO basic auth for the API
+main.use('/constructor', basicAuth(auth.page), constructor)
 
-module.exports = app
+module.exports = main

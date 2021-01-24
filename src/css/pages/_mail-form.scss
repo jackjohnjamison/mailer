@@ -27,4 +27,11 @@
             border-width: 2px;
         }
     }
+
+    &.js-state--sending {
+        button[type="submit"] {
+            opacity: .5;
+            cursor: auto;
+        }
+    }
 }

@@ -1,16 +1,16 @@
 const https = require('https')
 
 const utl = require('../lib/server-utilites')
-utl.setDevEnviroment()
+utl.setDevEnviroment() // This needs to be set before running the main
 
-const app = require('../app')
+const main = require('../main')
 const debug = require('debug')('server:server')
 
 /**
  * Get port from environment and store in Express.
  */
 const port = utl.normalizePort( process.env.PORT )
-app.set('port', port)
+main.set('port', port)
 
 /**
  * Create server.
@@ -19,7 +19,7 @@ function setServer() {
     return https.createServer({
         key: utl.getSSLEnv('SSL_KEY'),
         cert: utl.getSSLEnv('SSL_CRT')
-    }, app)
+    }, main)
 }
 const server = setServer()
 

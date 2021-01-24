@@ -9,6 +9,11 @@
     
         request.onreadystatechange = () => {
             console.log(request.readyState, request.status, request.response)
+            if (request.readyState == 4 && request.status == 200) {
+				state.removeSending()
+                const messageRecipient = JSON.parse(request.response).message.to
+                message.set('success', `Message sent sucessfully to ${messageRecipient}!`)
+			}
         }
     }
     
@@ -20,10 +25,36 @@
             text: document.getElementById('text').value
         }
     }
+
+    const message = {
+        messageElement: document.getElementById('message'),
+
+        set(state, message) {
+            this.messageElement.setAttribute('state', state)
+            this.messageElement.innerText = message
+        }
+    }
+
+    const state = {
+        targetElement: document.body,
+        buttonElement: document.getElementById("submit"),
+        toggleClass: 'js-state--sending',
+
+        setSending() {
+            this.targetElement.classList.add( this.toggleClass )
+            this.buttonElement.disabled = true
+        },
+
+        removeSending() {
+            this.targetElement.classList.remove( this.toggleClass )
+            this.buttonElement.disabled = false
+        }
+    }
     
     function sendMail() {
         const emailDataJSON = JSON.stringify(collectEmailData())
         postRequest(emailDataJSON)
+        state.setSending()
     }
 
     // Initialize form

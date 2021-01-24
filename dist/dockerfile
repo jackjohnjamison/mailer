@@ -2,10 +2,10 @@ FROM node:latest
 
 ENV IN_IMAGE="true"
 
-WORKDIR /app
-COPY package.json /app
+WORKDIR /main
+COPY package.json /main
 RUN npm install
-COPY . /app
+COPY . /main
 
 CMD node ./bin/www.js
 

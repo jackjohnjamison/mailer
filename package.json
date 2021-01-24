@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "nodemonConfig": {
     "watch": [
-      "dist/app.js",
+      "dist/main.js",
       "dist/bin/www.js",
       "dist/routes/",
       "dist/views/",

@@ -11,3 +11,15 @@
     text-shadow: 0 0 4px rgba(255, 255, 255, .5);
     font-weight: bold;
 }
+
+.message[state="success"] {
+    background-color: $d-color--success;
+}
+
+.message[state="alert"] {
+    background-color: $d-color--alert;
+}
+
+.message[state="warn"] {
+    background-color: $d-color--warn;
+}
