@@ -1,1 +1,1 @@
-"use strict";var content=document.getElementById("content"),brightnessToggle=document.createElement("button");content.appendChild(brightnessToggle),brightnessToggle.id="brightness-mode",brightnessToggle.addEventListener("click",toggleBrightness);function toggleBrightness(){content.classList.toggle("dark")}
+"use strict";(function(){var a=document.getElementById("content"),b=document.createElement("button");a.prepend(b),b.id="brightness-mode",b.addEventListener("click",function(){a.classList.toggle("dark")})})();
