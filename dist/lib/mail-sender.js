@@ -34,15 +34,21 @@ function sendMail(req, res) {
     
         sgMail.send(msg).then(() => {
             console.log(msg)
-            res.status(200).json({ message: msg })
+            res.status(200).json({
+                result: 'success',
+                message: msg
+            })
         }).catch((error) => {
             console.error(error, msg)
-            res.status(400).json({ message: 'Message sending failed', msg })
+            res.status(400).json({
+                result:'failure',
+                message: msg
+            })
         })
 
     } else {
-        console.error('Message sending failed, no recipient address included')
-        res.status(400).json({ message: 'Message sending failed, no recipient address included' })
+        console.error('Message sending failed, no recipient address included1')
+        res.status(400).json({ result:'failure', message: msg })
     }
 }
 

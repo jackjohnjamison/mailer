@@ -1,7 +1,7 @@
 .message {
-    padding: $gauge--small;
+    padding: $gauge--small $gauge--small;
     margin-bottom: $gauge--medium;
-    border-radius: $gauge--tiny;
+    border-radius: $gauge--small;
     background-color: $l-color--highlight;
 }
 

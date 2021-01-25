@@ -9,10 +9,22 @@
     
         request.onreadystatechange = () => {
             console.log(request.readyState, request.status, request.response)
+            console.log(JSON.parse(request.response))
             if (request.readyState == 4 && request.status == 200) {
-				state.removeSending()
-                const messageRecipient = JSON.parse(request.response).message.to
-                message.set('success', `Message sent sucessfully to ${messageRecipient}!`)
+                switch (request.response.result) {
+                    case 'success':
+                        const messageRecipient = JSON.parse(request.response).message.to
+                        message.set('success', `Message sent sucessfully to ${messageRecipient}!`)
+                        state.removeSending()
+                        break;
+                    case 'failure':
+                        message.set('alert', `${request.response}!`)
+                        state.removeSending()
+                        break;
+                    default:
+                        message.set('alert', `Sending error`)
+                        state.removeSending()
+                }
 			}
         }
     }
