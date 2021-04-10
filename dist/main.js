@@ -27,20 +27,11 @@ main.use(cookieParser())
 main.use(express.static(path.join(__dirname, 'assets'))) // Sets root for static files
 
 // Adding routes
-const indexRouter = require('./routes/index')
-const mailerRouter = require('./routes/mailer')
-const mailerAPIRouter = require('./routes/mailer-api')
-const constructor = require('./routes/constructor')
-const publishing = require('./routes/publishing')
-
-console.log(constructor)
-console.log(publishing)
-
-main.use('/', indexRouter)
-main.use('/mailer', basicAuth(auth.page), mailerRouter)
-main.use('/mailer/api', /*basicAuth(auth.api),*/ mailerAPIRouter) // TODO basic auth for the API
-main.use('/constructor', basicAuth(auth.page), constructor)
-main.use('/publishing', publishing)
-
+main.use('/', require('./routes/index') )
+main.use('/mailer', basicAuth(auth.page), require('./routes/mailer') )
+main.use('/mailer2', basicAuth(auth.page), require('./routes/mailer2') )
+main.use('/mailer/api', /*basicAuth(auth.api),*/ require('./routes/mailer-api') ) // TODO basic auth for the API
+main.use('/constructor', basicAuth(auth.page), require('./routes/constructor') )
+main.use('/publishing', require('./routes/publishing') )
 
 module.exports = main

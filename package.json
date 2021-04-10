@@ -29,6 +29,8 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-rollup": "^2.17.0",
     "gulp-sass": "^4.1.0",
-    "rollup": "^2.37.0"
+    "rollup": "^2.37.0",
+    "vue": "^2.6.12",
+    "vuex": "^3.6.2"
   }
 }

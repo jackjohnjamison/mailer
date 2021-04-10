@@ -1,0 +1,16 @@
+{% extends layout %}
+
+{% block content %}
+
+    {% raw %}
+        <div id="counter">
+            Counter: {{ counter }}
+        </div>
+    {% endraw %}
+
+{% endblock %}
+
+{% block extraScripts %}
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.0.7"></script>
+    <script src="vue/mailer2.js"></script>
+{% endblock %}}
