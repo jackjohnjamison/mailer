@@ -9,7 +9,7 @@
     
         request.onreadystatechange = () => {
             console.log(request.readyState, request.status, request.response)
-            console.log(JSON.parse(request.response))
+            console.log(request.response.result)
             if (request.readyState == 4 && request.status == 200) {
                 switch (request.response.result) {
                     case 'success':

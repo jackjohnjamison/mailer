@@ -1,6 +1,6 @@
 const auth = {
     page: {
-        users: { 'admin' : 'privaledge' },
+        users: { 'admin' : 'admin' },
         challenge: true,
         realm: 'Cybertron'
     },

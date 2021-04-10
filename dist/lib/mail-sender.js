@@ -47,8 +47,11 @@ function sendMail(req, res) {
         })
 
     } else {
-        console.error('Message sending failed, no recipient address included1')
-        res.status(400).json({ result:'failure', message: msg })
+        console.error('Message sending failed, no recipient address included')
+        res.status(400).json({
+            result:'failure',
+            message: msg
+        })
     }
 }
 

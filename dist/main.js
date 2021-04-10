@@ -31,10 +31,16 @@ const indexRouter = require('./routes/index')
 const mailerRouter = require('./routes/mailer')
 const mailerAPIRouter = require('./routes/mailer-api')
 const constructor = require('./routes/constructor')
+const publishing = require('./routes/publishing')
+
+console.log(constructor)
+console.log(publishing)
 
 main.use('/', indexRouter)
 main.use('/mailer', basicAuth(auth.page), mailerRouter)
 main.use('/mailer/api', /*basicAuth(auth.api),*/ mailerAPIRouter) // TODO basic auth for the API
 main.use('/constructor', basicAuth(auth.page), constructor)
+main.use('/publishing', publishing)
+
 
 module.exports = main
