@@ -8,12 +8,11 @@
         request.send(emailDataJSON)
     
         request.onreadystatechange = () => {
-            console.log(request.readyState, request.status, request.response)
-            console.log(request.response.result)
             if (request.readyState == 4 && request.status == 200) {
-                switch (request.response.result) {
+                const response = JSON.parse(request.response)
+                switch (response.result) {
                     case 'success':
-                        const messageRecipient = JSON.parse(request.response).message.to
+                        const messageRecipient = response.message.to
                         message.set('success', `Message sent sucessfully to ${messageRecipient}!`)
                         state.removeSending()
                         break;
